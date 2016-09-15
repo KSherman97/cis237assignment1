@@ -12,6 +12,10 @@ namespace assignment1
         {
             UserInterface UI = new UserInterface();
             UI.GetUserInput();
+
+            CSVCollection readFile = new CSVCollection();
+
+            readFile.ReadFile();
         }
     }
 }

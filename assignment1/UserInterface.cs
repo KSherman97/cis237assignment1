@@ -37,6 +37,16 @@ namespace assignment1
                 Console.Clear();
             }
 
+            if (errorCauseString == "multiRead")
+            {
+                Console.Clear();
+                Console.WriteLine("The file can only be read once per run!");
+                Console.WriteLine("Please try again.");
+
+                System.Threading.Thread.Sleep(2500);
+                Console.Clear();
+            }
+
             else
             {
                 Console.Clear();
