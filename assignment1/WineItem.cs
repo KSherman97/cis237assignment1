@@ -48,5 +48,10 @@ namespace assignment1
             // it allows us to reference things that are declard at this classes 'class level'
             return this._wineID + " " + this._wineName + " " + this._wineVolume;
         }
+
+        public void showLength()
+        {
+           Console.WriteLine(this._wineID.Length);
+        }
     }
 }

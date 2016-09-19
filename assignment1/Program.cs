@@ -88,7 +88,7 @@ namespace assignment1
 
                 if(choice == 4)
                 {
-                    WineItemCollection wineItemCollectionString = new WineItemCollection(1);
+                    wines.showLength();
                 }
 
                 Console.WriteLine("Press any Key to continue.");

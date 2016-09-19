@@ -14,7 +14,7 @@ namespace assignment1
         // dependency injection (good coding practice) https://msdn.microsoft.com/en-us/library/hh323705(v=vs.100).aspx
         public bool ReadCSV(string pathToCSVFile, WineItem[] wines)
         {
-            /* // declares a new variables for a StreamReader object. Not instantiating it yet
+            // declares a new variables for a StreamReader object. Not instantiating it yet
              StreamReader streamReader = null;// requiers: using System.IO; set default to null
 
              // start a try since the path to the file could be incorrect, and thus throwing an exception
@@ -55,55 +55,6 @@ namespace assignment1
                      streamReader.Close();
                  }
              }
-         */
-            string[] wineID = new string[5000];
-            string[] wineName = new string[5000];            // array to hold integer 'hours'
-            string[] wineVolume = new string[5000];
-
-            int subCounter = 0;
-           
-            StreamReader streamReader = null;
-            try
-            {
-                streamReader = new StreamReader(pathToCSVFile);    // creates instance of stream reader (opens file)
-                string line;
-                    while ((line = streamReader.ReadLine()) != null)
-                    {                     // another way to test for EOF is the Peek() method
-                            // declares a string array and assigns the split line to it.
-                            var parts = line.Split(',');
-
-                            // assign the parts to local variables that mean something
-                            wineID[subCounter] = parts[0];
-                            wineName[subCounter] = parts[1];
-                            wineVolume[subCounter] = parts[2];
-
-                            // Use the variables to instanciate a new employee and assign it to 
-                            // the spot in the employees array indexed by the index that was passed in.
-                            wines[subCounter] = new WineItem(wineID[subCounter], wineName[subCounter], wineVolume[subCounter]);
-                            Console.WriteLine("{0}  {1}   {2}    {3}" + Environment.NewLine, subCounter,
-                                                           wineID[subCounter], wineName[subCounter], wineVolume[subCounter]);
-                            WineItemCollection wineItemCollection = new WineItemCollection(subCounter, wineID, wineName, wineVolume);
-                            subCounter++;
-                     }
-                Console.WriteLine();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                Console.WriteLine();
-                streamReader.Close();
-                return false;
-            }
-            finally // once the try / catch has completed, finish doing this stuff. Do it whether try is successful or not
-            {
-                // if there is a file to close then you need to close it before continuing on with the program
-                if (streamReader != null)
-                {
-                    streamReader.Close();
-                }
-            }
-
-
         }
 
         static void processLine(string line, WineItem[] wines, int index)
