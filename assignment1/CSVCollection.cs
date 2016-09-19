@@ -69,7 +69,6 @@ namespace assignment1
                 string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {                     // another way to test for EOF is the Peek() method
-                        {
                             // declares a string array and assigns the split line to it.
                             var parts = line.Split(',');
 
@@ -81,12 +80,12 @@ namespace assignment1
                             // Use the variables to instanciate a new employee and assign it to 
                             // the spot in the employees array indexed by the index that was passed in.
                             wines[subCounter] = new WineItem(wineID[subCounter], wineName[subCounter], wineVolume[subCounter]);
-                            //addToCollection(subCounter, wineID[subCounter], hoursWorked[subCounter], empName[subCounter]);
                             Console.WriteLine("{0}  {1}   {2}    {3}" + Environment.NewLine, subCounter,
                                                            wineID[subCounter], wineName[subCounter], wineVolume[subCounter]);
-                        }
-                    subCounter++;
-                    }
+                            WineItemCollection wineItemCollection = new WineItemCollection(subCounter, wineID, wineName, wineVolume);
+                            subCounter++;
+                     }
+                Console.WriteLine();
                 return true;
             }
             catch (Exception Ex)
@@ -122,9 +121,9 @@ namespace assignment1
             wines[index] = new WineItem(wineID, wineName, wineVolume);
         }
 
-        private void addToCollection(int index, string wineID, string wineName, string wineVolume)
+        private void addToCollection(int index, string[] wineID, string[] wineName, string[] wineVolume)
         {
-            new WineItemCollection(wineID, wineName, wineVolume);
+            
         }
     }
 }

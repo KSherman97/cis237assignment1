@@ -21,7 +21,6 @@ namespace assignment1
 
             WineItem wines = new WineItem();
             WineItem[] wineItemArray = new WineItem[5000];
-            WineItemCollection[] wineItemArrayCollection = new WineItemCollection[5000];
 
             // continue until 2(exit) is entered as the menue value
             string allOutPut = "";
@@ -84,11 +83,12 @@ namespace assignment1
                         Console.WriteLine("Item Not Found");
                     }
                      * **/
+                    WineItemCollection wineItemCollectionString = new WineItemCollection(2);
                 }
 
                 if(choice == 4)
                 {
-
+                    WineItemCollection wineItemCollectionString = new WineItemCollection(1);
                 }
 
                 Console.WriteLine("Press any Key to continue.");
