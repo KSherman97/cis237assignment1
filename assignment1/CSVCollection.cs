@@ -60,7 +60,7 @@ namespace assignment1
         static void processLine(string line, WineItem[] wines, int index)
         {
             // declares a string array and assigns the split line to it.
-            string[] parts = line.Split(',');
+            var parts = line.Split(',');
 
             // assign the parts to local variables that mean something
             string wineID = parts[0];

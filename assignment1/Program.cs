@@ -19,6 +19,10 @@ namespace assignment1
             int choice = UI.GetUserInput();
             // int choice = StaticUserInterface.GetUserInput(); // example with using the static UI class
 
+            WineItem wines = new WineItem();
+            WineItem[] wineItemArray = new WineItem[5000];
+            WineItemCollection[] wineItemArrayCollection = new WineItemCollection[5000];
+
             // continue until 2(exit) is entered as the menue value
             string allOutPut = "";
             while (choice != 5)
@@ -28,17 +32,16 @@ namespace assignment1
                 {
                     if (!CSVLoaded)
                     {
-                        WineItem wines = new WineItem();
-                        WineItem[] wineItem = new WineItem[5000];
+                        
                         CSVCollection readFile = new CSVCollection();
 
-                        readFile.ReadCSV("WineList.CSV", wineItem);
+                        readFile.ReadCSV("WineList.CSV", wineItemArray);
 
                         //Console.Clear();
 
                         // a foreach loop. It is usefull for doing a collection of objects
                         // Each object in the array 'employees' will get assigned to the local variable 'employee' inside the loop
-                        foreach (WineItem wine in wineItem) // foreach(Employee(Type;like int) employee(pointer to Employee class) in employees(array))
+                        foreach (WineItem wine in wineItemArray) // foreach(Employee(Type;like int) employee(pointer to Employee class) in employees(array))
                         {
                             // run a check to make sure the spot in the array is not empty
                             if (wine != null)
@@ -70,6 +73,17 @@ namespace assignment1
                 if(choice == 3)
                 {
 
+                    /**string value = "39171";
+                    int pos = Array.IndexOf(wines.wineID[], value);
+                    if (pos > -1)
+                    {
+                        Console.WriteLine("Item Found");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Item Not Found");
+                    }
+                     * **/
                 }
 
                 if(choice == 4)
