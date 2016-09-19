@@ -8,7 +8,7 @@ namespace assignment1
 {
     class WineItemCollection
     {
-        public WineItemCollection(string[] wineIDString, string[] wineNameString, string[] wineVolumeString)
+        public WineItemCollection(string wineIDString, string wineNameString, string wineVolumeString)
         {
 
         }

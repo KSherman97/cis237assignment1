@@ -15,7 +15,7 @@ namespace assignment1
             this.PrintMainMenu();
 
             string inputString = Console.ReadLine();
-            while (inputString != "1" && inputString != "2" && inputString != "3" && inputString != "4" && inputString != "5")
+            while (inputString != "1" && inputString != "2" && inputString != "3" && inputString != "4" && inputString != "5" && inputString != string.Empty && inputString != null)
             {
                 ErrorMessageHandling(errorCauseString = "badInput");
 
@@ -23,7 +23,15 @@ namespace assignment1
                 inputString = Console.ReadLine();
             }
             Console.Clear();
-            return Int32.Parse(inputString);
+            try
+            {
+                return Int32.Parse(inputString);
+            }
+            catch(Exception EX)
+            {
+                ErrorMessageHandling(errorCauseString = "noInput");
+                return 0;
+            }
         }
 
         private void ErrorMessageHandling(string errorCauseString)
@@ -48,6 +56,16 @@ namespace assignment1
                 Console.Clear();
             }
 
+            if (errorCauseString == "noInput")
+            {
+                Console.Clear();
+                Console.WriteLine("Input cannot be empty!");
+                Console.WriteLine("Please try again.");
+
+                System.Threading.Thread.Sleep(2500);
+                Console.Clear();
+            }
+            /**
             else
             {
                 Console.Clear();
@@ -57,6 +75,7 @@ namespace assignment1
                 System.Threading.Thread.Sleep(2500);
                 Console.Clear();
             }
+        */
         }
 
         private void PrintMainMenu()
