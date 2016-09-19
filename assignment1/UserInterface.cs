@@ -15,13 +15,14 @@ namespace assignment1
             this.PrintMainMenu();
 
             string inputString = Console.ReadLine();
-            while(inputString != "1" && inputString != "2" && inputString != "3" && inputString != "4" && inputString != "5")
+            while (inputString != "1" && inputString != "2" && inputString != "3" && inputString != "4" && inputString != "5")
             {
                 ErrorMessageHandling(errorCauseString = "badInput");
 
                 this.PrintMainMenu();
                 inputString = Console.ReadLine();
             }
+            Console.Clear();
             return Int32.Parse(inputString);
         }
 
@@ -65,6 +66,11 @@ namespace assignment1
             Console.WriteLine("3) Search by ItemID");
             Console.WriteLine("4) Add New Wine to List");
             Console.WriteLine("5) Exit");
+        }
+
+        public void PrintAllOutput(string allOutput)
+        {
+            Console.WriteLine(allOutput);
         }
     }
 }
