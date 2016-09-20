@@ -9,13 +9,14 @@ namespace assignment1
 {
     class CSVCollection
     {
-
+        WineItemCollection addWineItem = new WineItemCollection();
         // CSV Reader
         // dependency injection (good coding practice) https://msdn.microsoft.com/en-us/library/hh323705(v=vs.100).aspx
-        public bool ReadCSV(string pathToCSVFile, WineItem[] wines)
+        public bool ReadCSV(string pathToCSVFile, WineItemCollection wines)
         {
+            
             // declares a new variables for a StreamReader object. Not instantiating it yet
-             StreamReader streamReader = null;// requiers: using System.IO; set default to null
+            StreamReader streamReader = null;// requiers: using System.IO; set default to null
 
              // start a try since the path to the file could be incorrect, and thus throwing an exception
              try
@@ -57,7 +58,7 @@ namespace assignment1
              }
         }
 
-        static void processLine(string line, WineItem[] wines, int index)
+        private void processLine(string line, WineItemCollection wines, int index)
         {
             // declares a string array and assigns the split line to it.
             var parts = line.Split(',');
@@ -69,12 +70,8 @@ namespace assignment1
 
             // Use the variables to instanciate a new employee and assign it to 
             // the spot in the employees array indexed by the index that was passed in.
-            wines[index] = new WineItem(wineID, wineName, wineVolume);
-        }
-
-        private void addToCollection(int index, string[] wineID, string[] wineName, string[] wineVolume)
-        {
-            
+            wines.addWineItem(index, wineID, wineName, wineVolume);
+            //addToCollection(index, wineID, wineName, wineVolume);
         }
     }
 }

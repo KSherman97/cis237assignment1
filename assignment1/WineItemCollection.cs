@@ -8,79 +8,61 @@ namespace assignment1
 {
     class WineItemCollection
     {
-        private int _index;
-        private string[] _wineID;
-        private string[] _wineName;
-        private string[] _wineVolume;
-        public WineItemCollection(int actionCode)
+        WineItem[] _wineItemArray = new WineItem[5000];
+
+        
+        private string _wineIDString;
+        private string _wineNameString;
+        private string _wineVolumeString;
+
+        public WineItemCollection() {}
+
+        public WineItemCollection(string wineIDString, string wineNameString, string wineVolumeString)
         {
-            if (actionCode == 1)
+            wineIDString = _wineIDString;
+            wineNameString = _wineNameString;
+            wineVolumeString = _wineVolumeString;
+        }
+
+        public string wineIDString
+        {
+            set { _wineIDString = value; }
+            get { return _wineIDString; }
+        }
+
+        public string wineNameString
+        {
+            set { _wineNameString = value; }
+            get { return _wineNameString; }
+        }
+
+        public string wineVolumeString
+        {
+            set { _wineVolumeString = value; }
+            get { return _wineVolumeString; }
+        }
+
+        public void addWineItem(int index, string wineID, string wineName, string wineVolume)
+        {
+            _wineItemArray[index] = new WineItem(wineID, wineName, wineVolume);
+        }
+
+        public string outputArray()
+        {
+            string allOutPut = "";
+            foreach (WineItem wine in _wineItemArray) // foreach(Employee(Type;like int) employee(pointer to Employee class) in employees(array))
             {
-                if(wineIDString != null)
-                        Console.WriteLine(wineIDString.Length);
-                    else
-                        Console.WriteLine("There doesn't appear to be anything here");
-            }
-
-            if(actionCode == 2)
-            {
-                Console.WriteLine("Enter a search value: ");
-                string searchValue = Console.ReadLine();
-                arraySearch(searchValue);
-            }
-        }
-
-        public WineItemCollection(int subString,  string[] wineIDString, string[] wineNameString, string[] wineVolumeString)
-        {
-            subString = _index;
-            wineIDString = _wineID;
-            wineNameString = _wineName;
-            wineVolumeString = _wineVolume;
-
-
-        }
-
-        public int subString
-        {
-            set { _index = value; }
-            get { return _index; }
-        }
-
-        public string[] wineIDString
-        {
-            set { _wineID = value; }
-            get { return _wineID; }
-        }
-
-        public string[] wineNameString
-        {
-            set { _wineName = value; }
-            get { return _wineName; }
-        }
-
-        public string[] wineVolumeString
-        {
-            set { _wineVolume = value; }
-            get { return _wineVolume; }
-        }
-
-        private void arraySearch(string targetWine)
-        {
-            bool found = false;
-            int index = 0;
-            while (!found && index <= _wineID.Length-1)
-            {
-                if(_wineID[index] == targetWine)
+                // run a check to make sure the spot in the array is not empty
+                if (wine != null)
                 {
-                    found = true;
-                    Console.WriteLine("Wine Could be found");
-                }
-                else
-                {
-                    index++;
+                    // print the employee
+                    allOutPut += wine.ToString() + Environment.NewLine;
+                    //Console.WriteLine(wine);
                 }
             }
-            Console.WriteLine("Wine Could not be found");
+            //UI.PrintAllOutput(allOutPut);
+
+            return allOutPut;
         }
     }
 }

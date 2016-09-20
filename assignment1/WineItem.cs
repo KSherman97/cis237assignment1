@@ -37,21 +37,13 @@ namespace assignment1
             this._wineVolume = wineVolumeString;
         }
 
-        public WineItem()
-        {
-
-        }
+        public WineItem() { } // Blank Constructor
 
         public override string ToString()
         {
             // the this keyword is used to reference 'this' class. 
             // it allows us to reference things that are declard at this classes 'class level'
             return this._wineID + " " + this._wineName + " " + this._wineVolume;
-        }
-
-        public void showLength()
-        {
-           Console.WriteLine(this._wineID.Length);
         }
     }
 }
