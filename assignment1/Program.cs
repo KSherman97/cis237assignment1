@@ -101,7 +101,11 @@ namespace assignment1
 
                     // calls the WineItemCollection class's userAddItem method
                     // using the variables wineID, wineName, wineVolume strings passed from this class
-                    wineItemArrayCollection.userAddItem(wineID, wineName, wineVolume);
+                    // if statement prevents empty strings from being added to the array
+                    if (wineID != String.Empty && wineName != String.Empty && wineVolume != String.Empty)
+                        wineItemArrayCollection.userAddItem(wineID, wineName, wineVolume);
+                    else
+                        Console.Write("Sorry, you must enter first something in order to add it.");
                 }
 
                 // redisplay the main menu when an if statement is done doing its work
