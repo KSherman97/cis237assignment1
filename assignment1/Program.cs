@@ -47,7 +47,7 @@ namespace assignment1
 
                         CSVCollection readFile = new CSVCollection();               // instantiates the read filereader class
 
-                        readFile.ReadCSV("WineList.CSV", wineItemArrayCollection);  // calls the ReadCSV method in the CSV reader class
+                        readFile.ReadCSV("../../../datafiles/WineList.CSV", wineItemArrayCollection);  // calls the ReadCSV method in the CSV reader class
 
                         Console.WriteLine("File Read Successful.");                 // let the user know that the file was successfully read
                         CSVLoaded = true;               // set the CSVLoaded bool to true
