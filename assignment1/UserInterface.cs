@@ -65,17 +65,6 @@ namespace assignment1
                 System.Threading.Thread.Sleep(2500);
                 Console.Clear();
             }
-            /**
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("An unknown error has occured!");
-                Console.WriteLine("Please try again.");
-
-                System.Threading.Thread.Sleep(2500);
-                Console.Clear();
-            }
-        */
         }
 
         private void PrintMainMenu()

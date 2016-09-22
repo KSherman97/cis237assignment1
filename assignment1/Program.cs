@@ -31,6 +31,10 @@ namespace assignment1
                 {
                     if (!CSVLoaded)
                     {
+                        Console.WriteLine("Reading the file will remove any items you have added!");
+                        Console.Write("Press any key to continue...");
+                        Console.ReadKey();
+                        Console.Clear();
 
                         CSVCollection readFile = new CSVCollection();
 
@@ -67,11 +71,25 @@ namespace assignment1
 
                 if(choice == 3)
                 {
-                    Console.WriteLine(wineItemArrayCollection.searchWineItem());
+                    Console.Write("Enter the Wine ID to search for: ");
+                    string targetWine = Console.ReadLine();
+                    Console.Clear();
+                    string searchResults = wineItemArrayCollection.searchWineItem(targetWine);
+                    Console.WriteLine(searchResults);
                 }
 
                 if(choice == 4)
                 {
+                    Console.Write("Enter the Wine ID to add: ");
+                    string wineID = Console.ReadLine();
+                    Console.Clear();
+                    Console.Write("Enter the Wine Name to add: ");
+                    string wineName = Console.ReadLine();
+                    Console.Clear();
+                    Console.Write("Enter the Wine Volume to add: ");
+                    string wineVolume = Console.ReadLine();
+                    Console.Clear();
+                    wineItemArrayCollection.userAddItem(wineID, wineName, wineVolume);
                 }
 
                 Console.WriteLine("Press any Key to continue.");

@@ -47,26 +47,8 @@ namespace assignment1
             _wineItemArray[index] = new WineItem(wineID, wineName, wineVolume);
         }
 
-        public string searchWineItem()
+        public string searchWineItem(string searchValue)
         {
-            /**
-            string targetWine = "39171";
-            bool found = false;
-            int index = 0;
-            while (!found && index <= _wineItemArray.Length - 1)
-            {
-                if (_wineItemArray[index].ToString() == targetWine)
-                {
-                    found = true;
-                    Console.WriteLine("Wine Could be found");
-                }
-                else
-                {
-                    index++;
-                }
-            }
-             **/
-            string searchValue = "39171";
             bool found = false;
             string results = string.Empty;
             int index = 0;
@@ -83,16 +65,47 @@ namespace assignment1
                             found = true;
                             results = "Wine found!" + Environment.NewLine + "Wine ID: " + wine.WineIDString + Environment.NewLine + "Wine Name: " + wine.WineNameString + Environment.NewLine + "Wine Volume: " + wine.WineVolumeString + Environment.NewLine;
                         }
+                        else
+                        {
+                            results = "Item could not be found.";
+                            break;
+                        }
                     }
                     else
                     {
-                        results = "Item could not be found";
+                        results = "Item could not be found.";
                         break;
                     }
                 }
-                //UI.PrintAllOutput(allOutPut);
             }
             return results;
+        }
+
+        public void userAddItem(string wineID, string wineName, string wineVolume)
+        {
+            bool found = false;
+            string results = string.Empty;
+            int index = 0;
+
+            foreach (WineItem wine in _wineItemArray) // foreach(Employee(Type;like int) employee(pointer to Employee class) in employees(array))
+            {
+                while (!found && index <= _wineItemArray.Length - 1)
+                {
+                    // run a check to make sure the spot in the array is not empty
+                    if (wine == null)
+                    {
+                        _wineItemArray[index] = new WineItem(wineID, wineName, wineVolume);
+                        found = true;
+                        Console.WriteLine("Item has been Added!");
+                        break;
+                    }
+                    else
+                    {
+                        index++;
+                    }
+                    break;
+                }
+            }
         }
 
         public string outputArray()
