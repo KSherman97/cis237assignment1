@@ -15,10 +15,16 @@ namespace assignment1
 {
     class WineItem
     {
+        // ******************************** 
+        //          Backing Fields         
+        // ********************************
         private string _wineID;
         private string _wineName;
         private string _wineVolume;
 
+        // ******************************** 
+        //            Properties                             
+        // ********************************
         public string WineIDString
         {
             get { return _wineID; }
@@ -37,6 +43,9 @@ namespace assignment1
             set { _wineVolume = value; }
         }
 
+        // ******************************** 
+        //          Constructors                  
+        // ********************************
         public WineItem(string wineIDString, string wineNameString, string wineVolumeString)
         {
             this._wineID = wineIDString;
@@ -46,6 +55,10 @@ namespace assignment1
 
         public WineItem() { } // Blank Constructor
 
+        // ToString override method
+        // this method makes the WineItem.ToString() 
+        // display a concatinated string of the 3 vars
+        // wineID, wineName, and wineVolume
         public override string ToString()
         {
             // the this keyword is used to reference 'this' class. 
