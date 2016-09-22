@@ -67,6 +67,7 @@ namespace assignment1
 
                 if(choice == 3)
                 {
+                    Console.WriteLine(wineItemArrayCollection.searchWineItem());
                 }
 
                 if(choice == 4)
