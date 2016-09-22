@@ -1,7 +1,8 @@
 # Assignment 1 - Review of C# Basic Concepts and Introduction to Git
-## Due 9-20-2016
+## Due 9-22-2016
 
 ## Author
+Kyle Sherman
 
 ## Description
 
@@ -62,23 +63,31 @@ Suggestion/Hints:
 ## Grading
 | Feature             | Points |
 |---------------------|--------|
-| Load CSV            | 10     |
-| Load CSV Only Once  | 5      |
-| Print List          | 10     |
-| Search              | 10     |
-| Add New Item        | 10     |
-| ToString Override   | 10     |
-| CSV Processor Class | 5      |
-| UserInterface       | 5      |
-| WineItem            | 5      |
-| WineItemCollection  | 5      |
-| A Loop              | 5      |
-| Control Structure   | 5      |
-| WineItem Array      | 5      |
-| A Method            | 5      |
-| Documentation       | 5      |
+| Load CSV            | 10     | [Done]
+| Load CSV Only Once  | 5      | [Done]
+| Print List          | 10     | [Done]
+| Search              | 10     | [Done]
+| Add New Item        | 10     | [Done]
+| ToString Override   | 10     | [Done]
+| CSV Processor Class | 5      | [Done]
+| UserInterface       | 5      | [Done]
+| WineItem            | 5      | [Done]
+| WineItemCollection  | 5      | [Done]
+| A Loop              | 5      | [Done]
+| Control Structure   | 5      | [Done]
+| WineItem Array      | 5      | [Done]
+| A Method            | 5      | [Done]
+| Documentation       | 5      | [Done]
 | **Total**           | **100**|
 
 ## Outside Resources Used
+[C# Dependency Injection](https://msdn.microsoft.com/en-us/library/hh323705(v=vs.100).aspx)
+
+Gaddis, T. (2008). Starting out with programming logic & design. Boston: Pearson Addison Wesley.
+- Page 300
 
 ## Known Problems, Issues, And/Or Errors in the Program
+If you first add an item to the array and then read the file, anything that you added prior to reading the file
+will be overwritten. Should be fixible by rewriting the CSV reader to write to the first empty index.
+
+No other known issues / bugs
