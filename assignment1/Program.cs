@@ -40,9 +40,6 @@ namespace assignment1
                 {
                     if (!CSVLoaded)                     // checks if the CSV file is loaded or not
                     {
-                        Console.WriteLine("Reading the file will remove any items you have added!");
-                        Console.Write("Press any key to continue...");
-                        Console.ReadKey();
                         Console.Clear();
 
                         CSVCollection readFile = new CSVCollection();               // instantiates the read filereader class
