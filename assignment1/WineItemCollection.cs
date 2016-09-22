@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * Kyle Sherman
+ * CIS 237 - Advanced C# Programming
+ * 9/22/2016
+**/
+
+// standard imports
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
