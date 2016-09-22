@@ -61,30 +61,33 @@ Suggestion/Hints:
 * Remember to handle (gracefully) cases where the user enters something incorrectly.
 
 ## Grading
-| Feature             | Points |
-|---------------------|--------|
-| Load CSV            | 10     | [Done]
-| Load CSV Only Once  | 5      | [Done]
-| Print List          | 10     | [Done]
-| Search              | 10     | [Done]
-| Add New Item        | 10     | [Done]
-| ToString Override   | 10     | [Done]
-| CSV Processor Class | 5      | [Done]
-| UserInterface       | 5      | [Done]
-| WineItem            | 5      | [Done]
-| WineItemCollection  | 5      | [Done]
-| A Loop              | 5      | [Done]
-| Control Structure   | 5      | [Done]
-| WineItem Array      | 5      | [Done]
-| A Method            | 5      | [Done]
-| Documentation       | 5      | [Done]
-| **Total**           | **100**|
+| Feature             | Points | Completion |
+|---------------------|--------|------------|
+| Load CSV            | 10     |   DONE     |
+| Load CSV Only Once  | 5      |   DONE     |
+| Print List          | 10     |   DONE     |
+| Search              | 10     |   DONE     |
+| Add New Item        | 10     |   DONE     |
+| ToString Override   | 10     |   DONE     |
+| CSV Processor Class | 5      |   DONE     |
+| UserInterface       | 5      |   DONE     |
+| WineItem            | 5      |   DONE     |
+| WineItemCollection  | 5      |   DONE     |
+| A Loop              | 5      |   DONE     |
+| Control Structure   | 5      |   DONE     |
+| WineItem Array      | 5      |   DONE     |
+| A Method            | 5      |   DONE     |
+| Documentation       | 5      |   DONE     |
+| **Total**           | **100**|------------|
 
 ## Outside Resources Used
 [C# Dependency Injection](https://msdn.microsoft.com/en-us/library/hh323705(v=vs.100).aspx)
 
-Gaddis, T. (2008). Starting out with programming logic & design. Boston: Pearson Addison Wesley.
-- Page 300
+[Console Window Buffer Limit](http://stackoverflow.com/questions/1370158/console-bufferheight-i-cant-see-scroll-to-see-all-the-console-output-with-con)
+
+[Ideas for an array search algorithm](https://msdn.microsoft.com/en-us/library/aa287730(v=vs.71).aspx)
+
+Gaddis, T. (2008). Starting out with programming logic & design. Boston: Pearson Addison Wesley. Page. 300
 
 ## Known Problems, Issues, And/Or Errors in the Program
 If you first add an item to the array and then read the file, anything that you added prior to reading the file
